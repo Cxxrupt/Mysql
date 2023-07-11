@@ -1,35 +1,74 @@
-# Mysql
+# MySQL Command-line Application
 
-GIVEN a command-line application that accepts user input
+This is a command-line application that interacts with a MySQL database. It allows users to perform various actions such as viewing departments, roles, and employees, as well as adding departments, roles, employees, and updating employee roles.
 
-WHEN I start the application
+## Installation
 
-THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
+To use this application, please ensure that you have the following software installed:
 
-WHEN I choose to view all departments
+- MySQL Server: Install and configure MySQL Server on your machine.
+- MySQL Client: Install the MySQL Client to interact with the database from the command-line.
 
-THEN I am presented with a formatted table showing department names and department ids
+Once you have installed the necessary software, follow the steps below to set up the application:
 
-WHEN I choose to view all roles
+1. Clone the repository or download the source code.
+2. Open a terminal or command prompt and navigate to the project directory.
+3. Create a new MySQL database using the provided SQL script:
 
-THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
+mysql -u your_username -p < database.sql
 
-WHEN I choose to view all employees
 
-THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
+Replace `your_username` with your MySQL username, and you will be prompted to enter your MySQL password.
+4. Update the database connection details in the application's configuration file (`config.js` or `config.json`). Set the host, port, username, password, and database name according to your MySQL configuration.
 
-WHEN I choose to add a department
+## Usage
 
-THEN I am prompted to enter the name of the department and that department is added to the database
+To run the application, execute the main script from the command-line:
 
-WHEN I choose to add a role
+node app.js
 
-THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
 
-WHEN I choose to add an employee
 
-THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
+The application will start and present you with the following options:
 
-WHEN I choose to update an employee role
+1. View all departments
+2. View all roles
+3. View all employees
+4. Add a department
+5. Add a role
+6. Add an employee
+7. Update an employee role
 
-THEN I am prompted to select an employee to update and their new role and this information is updated in the database
+Select the desired option by entering the corresponding number and press Enter.
+
+### View all departments
+
+Choosing this option will display a formatted table showing all department names and their respective IDs.
+
+### View all roles
+
+Choosing this option will display a formatted table showing the job titles, role IDs, departments, and salaries for each role.
+
+### View all employees
+
+Selecting this option will show a formatted table with employee data, including employee IDs, first names, last names, job titles, departments, salaries, and the managers they report to.
+
+### Add a department
+
+This option allows you to add a new department to the database. You will be prompted to enter the name of the department, and it will be added to the database.
+
+### Add a role
+
+When selecting this option, you will be prompted to enter the name, salary, and department for the new role. Upon providing the required information, the role will be added to the database.
+
+### Add an employee
+
+Choosing this option will prompt you to enter the employee's first name, last name, role, and manager. After entering the necessary details, the employee will be added to the database.
+
+### Update an employee role
+
+Selecting this option will prompt you to select an employee from a list and provide their new role. Once you have made the selection, the employee's role will be updated in the database.
+
+## Conclusion
+
+This command-line application provides a convenient interface for managing departments, roles, and employees in a MySQL database. You can view existing data, add new records, and update employee roles easily. Feel free to explore the application and utilize its features to interact with your MySQL database efficiently.
